@@ -1,5 +1,5 @@
-const fromText = document.querySelector(".from-text"),
-toText = document.querySelector(".to-text"),
+const fromText = document.querySelector(".f-text"),
+toText = document.querySelector(".t-text"),
 exchageIcon = document.querySelector(".exchange"),
 selectTag = document.querySelectorAll("select"),
 icons = document.querySelectorAll(".row i");
@@ -33,7 +33,7 @@ translateBtn.addEventListener("click", () => {
     translateFrom = selectTag[0].value,
     translateTo = selectTag[1].value;
     if(!text) return;
-    toText.setAttribute("placeholder", "Translating...");
+    toText.setAttribute("placeholder", "Sec...");
     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
     fetch(apiUrl).then(res => res.json()).then(data => {
         toText.value = data.responseData.translatedText;
